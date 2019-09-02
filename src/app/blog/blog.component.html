@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container pt-3 pb-3">
+
+<div class="blog-container" *ngFor="let line of blog">
+
+
+ <div class="card bg-light">
+    <div class="card-header">
+     {{line.title}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{line.description}}</h5>
+      <p class="card-text">{{line.body}}</p>
+      <button class="btn btn-primary" (click)="showCommentBox()">Comment on this blog</button>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+
+<br>
+<div class="comment-card">
+  <div class="card">
+    <!--<div class="card-body" id="comment"><button class="btn btn-primary " (click)="comment1()"> <i class="fa fa-comments-o"></i></button><span>                  </span>{{line1}}</div>
+    </div>-->
+    
+    <div class="card-body" *ngFor="let line1 of commentArray" id="comment"><button class="btn btn-primary " (click)="showCommentBox()"> <i class="fa fa-comments-o"></i></button><span>                  </span>{{line1}}</div>
+    
+    
+  </div>
+
+  
+</div>
+
+
+<div class="comment-box" *ngIf="show_dialog">
+
+    <mat-form-field>
+        <textarea matInput placeholder="comment" [(ngModel)]="mainComment" #comment="ngModel"></textarea>
+    </mat-form-field>
+
+      <button class="btn btn-primary" (click)="comment1()">+</button>
+</div>
+
+
+
+
+
+
+
+</div>

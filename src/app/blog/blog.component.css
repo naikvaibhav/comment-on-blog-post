@@ -1,0 +1,8 @@
+.comment-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comment-box > * {
+    width: 100%;
+  }
